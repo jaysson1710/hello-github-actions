@@ -11,6 +11,9 @@ on:
 
 jobs:
   label:
+    permissions:
+      contents: read
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       # We need to checkout the repository to access the configured file (.github/label-pr.yml)
