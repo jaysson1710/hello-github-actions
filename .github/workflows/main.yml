@@ -10,12 +10,5 @@ jobs:
       - uses: ./action-a
         with:
           MY_NAME: "Mona"
-      
-      - name: Super Labeler
-        # You may pin to the exact commit or the version.
-        # uses: IvanFon/super-labeler-action@4befbe8bf20e3e4ba605ecf300cade38089ffcc5
-        uses: IvanFon/super-labeler-action@v1
-        with:
-          # The GITHUB_TOKEN secret
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+
           
