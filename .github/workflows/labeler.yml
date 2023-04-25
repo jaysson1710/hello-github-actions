@@ -6,6 +6,8 @@ on:
     types:
       - opened
       - reopened
+  pull_request:
+    branches: "*"
 
 jobs:
   label:
