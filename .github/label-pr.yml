@@ -1,10 +1,26 @@
-- regExp: ".*\\.ts+$"
-  labels: ["typescript"]
-- regExp: ".*\\.sql+$"
-  labels: ["database", "critical"]
-- regExp: ".*\\.md+$"
-  labels: ["documentation"]
-- regExp: "^(pom\\.xml|package\\.json|build\\.gradle)$"
-  labels: ["dependencies"]
-- regExp: ".*\\.(zip|jar|war|ear)+$"
-  labels: ["artifact", "invalid"]
+# Add 'repo' label to any root file changes
+repo:
+- '*'
+
+# Add '@domain/core' label to any change within the 'core' package
+'@domain/core':
+- package/core/*
+- package/core/**/*
+
+# Add 'test' label to any change to *.spec.js files within the source dir
+test:
+- src/**/*.spec.js
+
+# Add 'source' label to any change to src files within the source dir EXCEPT for the docs sub-folder
+source:
+- any: ['src/**/*', '!src/docs/*']
+
+# Add 'frontend` label to any change to *.js files as long as the `main.js` hasn't changed
+frontend:
+- any: ['src/**/*.js']
+  all: ['!src/main.js']
+  
+# Add 'documentation` label to any change to *.md files as long as the `main.js` hasn't changed
+documentation:
+- any: ['**/*.md']
+  all: ['src/**/*.md']
