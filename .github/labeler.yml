@@ -22,5 +22,4 @@ frontend:
   
 # Add 'documentation` label to any change to *.md files as long as the `main.js` hasn't changed
 documentation:
-- any: ['**/*.md']
-  all: ['src/**/*.md']
+- '**/*.md'
